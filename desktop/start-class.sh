@@ -4,8 +4,8 @@ set -eu
 ROOT_DIR="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
 cd "$ROOT_DIR"
 
-./desktop/test.sh
-./desktop/build.sh
+sh ./desktop/test.sh
+sh ./desktop/build.sh
 
 BASE_URL="http://127.0.0.1:8765"
 if curl -fsS "$BASE_URL/api/state" 2>/dev/null | grep -q '"mode"'; then
