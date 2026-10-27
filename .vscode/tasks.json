@@ -1,0 +1,39 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "SmartDoor: Start local app (build + test + open)",
+      "type": "shell",
+      "command": "sh",
+      "args": ["./desktop/start-class.sh"],
+      "windows": {
+        "command": "powershell",
+        "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}\\start-windows.ps1"]
+      },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": false }
+    },
+    {
+      "label": "SmartDoor: Build desktop simulator",
+      "type": "shell",
+      "command": "./desktop/build.sh",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "SmartDoor: Run desktop simulator",
+      "type": "shell",
+      "command": "./desktop/build/smartdoor-simulator",
+      "dependsOn": "SmartDoor: Build desktop simulator",
+      "dependsOrder": "sequence",
+      "problemMatcher": []
+    },
+    {
+      "label": "SmartDoor: Test desktop state model",
+      "type": "shell",
+      "command": "./desktop/test.sh",
+      "group": "test",
+      "problemMatcher": []
+    }
+  ]
+}
