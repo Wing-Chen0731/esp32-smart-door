@@ -6,11 +6,11 @@
 
 1. 将整个文件夹解压到本地磁盘，不要只拷贝其中某个文件。
 2. 确认电脑已安装 Apple Command Line Tools（提供 `clang++`）。如果没有，在“终端”运行 `xcode-select --install` 并完成安装。
-3. 双击文件夹里的 `start.command`。若 macOS 阻止首次打开：在 Finder 中对它点右键，选择“打开”，再确认一次。
+3. 在 VS Code 打开项目，按 `⌘⇧P`，运行 **Tasks: Run Task**，选择 **SmartDoor: Start local app (build + test + open)**。该任务不依赖脚本的执行权限。
 4. 等待终端出现“测试通过”“Build successful”和实验台地址；浏览器会自动打开终端显示的本机地址。默认端口为 8765，如果被占用会依次尝试后续端口。
 5. 使用期间不要关闭启动终端。完成后回到该终端按 `Control+C` 停止服务。
 
-也可以在 VS Code 中打开本文件夹，按 `⌘⇧P`，运行 **Tasks: Run Task**，选择 **SmartDoor: Start local app (build + test + open)**。
+如果希望双击启动：首次从 GitHub 下载后，在项目根目录终端运行一次 `chmod +x start.command desktop/*.sh`，再双击 `start.command`。若 macOS 阻止首次打开，在 Finder 中对它点右键，选择“打开”。也可以直接在终端运行 `sh ./start.command`。
 
 ## Windows 启动
 

@@ -4,7 +4,9 @@
 
 ### macOS
 
-需要 Apple Command Line Tools（提供 `clang++`）。如尚未安装，在“终端”运行 `xcode-select --install` 并完成安装。解压后双击 `start.command`；若系统拦截，右键文件并选择“打开”。也可在 VS Code 运行 **SmartDoor: Start local app (build + test + open)**。
+需要 Apple Command Line Tools（提供 `clang++`）。如尚未安装，在“终端”运行 `xcode-select --install` 并完成安装。在 VS Code 打开项目后，运行 **SmartDoor: Start local app (build + test + open)**；该任务直接通过 shell 启动，不依赖脚本执行权限。
+
+若要在 Finder 双击 `start.command`，从 GitHub 下载后先在项目根目录终端执行一次 `chmod +x start.command desktop/*.sh`。随后即可双击启动；若系统拦截，右键文件并选择“打开”。也可直接在终端运行 `sh ./start.command`。
 
 ### Windows
 
