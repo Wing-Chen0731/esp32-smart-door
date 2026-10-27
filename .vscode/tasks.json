@@ -16,7 +16,8 @@
     {
       "label": "SmartDoor: Build desktop simulator",
       "type": "shell",
-      "command": "./desktop/build.sh",
+      "command": "sh",
+      "args": ["./desktop/build.sh"],
       "group": { "kind": "build", "isDefault": true },
       "problemMatcher": []
     },
@@ -31,7 +32,8 @@
     {
       "label": "SmartDoor: Test desktop state model",
       "type": "shell",
-      "command": "./desktop/test.sh",
+      "command": "sh",
+      "args": ["./desktop/test.sh"],
       "group": "test",
       "problemMatcher": []
     }
